@@ -17,17 +17,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
         initializeAppUpdater()
-        val versionName : String = "App version : "+getVersionName(this)
-        Log.e("MainActivity.kt","VersionName ==> "+getVersionName(this))
+        val versionName: String = "App version : " + getVersionName(this)
+        Log.e("MainActivity.kt", "VersionName ==> " + getVersionName(this))
         version_name.setText(versionName)
+
 
     }
 
     private fun initializeAppUpdater() {
         val appUpdater = AppUpdater(this)
         appUpdater.start()
+        appUpdater.showEvery(5)
         appUpdater.setUpdateFrom(UpdateFrom.GITHUB)
-        appUpdater.setGitHubUserAndRepo("javiersantos", "AppUpdater")
+        appUpdater.setGitHubUserAndRepo("bharathi3991", "AppUpdateExampleByUpdater")
     }
 
     fun getVersionName(context: Context): String {
