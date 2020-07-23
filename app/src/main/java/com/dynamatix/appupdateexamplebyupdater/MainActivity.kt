@@ -1,11 +1,14 @@
 package com.dynamatix.appupdateexamplebyupdater
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.github.javiersantos.appupdater.AppUpdater
+import com.github.javiersantos.appupdater.enums.Display
 import com.github.javiersantos.appupdater.enums.UpdateFrom
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -25,11 +28,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initializeAppUpdater() {
-        val appUpdater = AppUpdater(this)
-        appUpdater.start()
-        appUpdater.showEvery(5)
-        appUpdater.setUpdateFrom(UpdateFrom.GITHUB)
-        appUpdater.setGitHubUserAndRepo("bharathi3991", "AppUpdateExampleByUpdater")
+        AppUpdater(this)
+            .setUpdateFrom(UpdateFrom.GITHUB)
+            .setGitHubUserAndRepo("bharathi3991", "AppUpdateExampleByUpdater")
+            .setDisplay(Display.DIALOG)
+            .showAppUpdated(true)
+            .start()
+
+       /* startActivity(
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://github.com/bharathi3991/AppUpdateExampleByUpdater")
+            )
+        )*/
     }
 
     fun getVersionName(context: Context): String {
