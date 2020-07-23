@@ -17,12 +17,23 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+       /* val binding: ActivityMainBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_main)*/
+       setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
-        initializeAppUpdater()
+    //    initializeAppUpdater()
         val versionName: String = "App version : " + getVersionName(this)
         Log.e("MainActivity.kt", "VersionName ==> " + getVersionName(this))
         version_name.setText(versionName)
+        version_name.setOnClickListener {
+            AppUpdater(this)
+                .setUpdateFrom(UpdateFrom.GITHUB)
+                .setGitHubUserAndRepo("bharathi3991", "AppUpdateExampleByUpdater")
+                .setDisplay(Display.DIALOG)
+                .showAppUpdated(true)
+                .start()
+        }
+        //versionName.setOnClickListener
 
 
     }
