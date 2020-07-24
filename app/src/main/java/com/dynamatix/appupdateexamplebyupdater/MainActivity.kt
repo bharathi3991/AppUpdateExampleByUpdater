@@ -28,8 +28,10 @@ class MainActivity : AppCompatActivity() {
        // Log.e("MainActivity.kt", "VersionName ==> " + getVersionName(this))
         version_name.setOnClickListener {
             AppUpdater(this)
-                .setUpdateFrom(UpdateFrom.GITHUB)
-                .setGitHubUserAndRepo("bharathi3991", "AppUpdateExampleByUpdater")
+              ///  .setUpdateFrom(UpdateFrom.GITHUB)
+              //  .setGitHubUserAndRepo("bharathi3991", "AppUpdateExampleByUpdater")
+                .setUpdateFrom(UpdateFrom.JSON)
+                .setUpdateJSON("https://github.com/bharathi3991/AppUpdateExampleByUpdater/tree/master/app/update-changelog.json")
                 .setDisplay(Display.DIALOG)
                 .showAppUpdated(true)
                 .start()
