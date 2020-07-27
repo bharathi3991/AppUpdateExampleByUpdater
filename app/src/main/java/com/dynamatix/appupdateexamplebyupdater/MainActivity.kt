@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
               ///  .setUpdateFrom(UpdateFrom.GITHUB)
               //  .setGitHubUserAndRepo("bharathi3991", "AppUpdateExampleByUpdater")
                 .setUpdateFrom(UpdateFrom.JSON)
-                .setUpdateJSON("https://github.com/bharathi3991/AppUpdateExampleByUpdater/tree/master/app/update-changelog.json")
+                .setUpdateJSON("https://github.com/bharathi3991/AppUpdateExampleByUpdater/master/app/update-changelog.json")
                 .setDisplay(Display.DIALOG)
                 .showAppUpdated(true)
                 .start()
