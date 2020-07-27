@@ -2,7 +2,7 @@
   <update>
     <latestVersion>2.0.0</latestVersion>
     <latestVersionCode>2</latestVersionCode>
-    <url>https://github.com/bharathi3991/AppUpdateExampleByUpdater/releases</url>
+    <url>https://github.com/bharathi3991/AppUpdateExampleByUpdater/releases/download/v2.0/app-debug.apk</url>
     <releaseNotes>
       - First evolution
       - Second evolution
